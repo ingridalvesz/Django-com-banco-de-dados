@@ -8,6 +8,7 @@
                 <div class="busca__fundo">
                     <input class="busca__input" type="text" placeholder="O que você procura?">
                     <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
+                    <link rel="shortcut icon" href="{% static 'img/core-img/favicon.ico' %}" type="image/x-icon">
                 </div>
             </div>
         </header>
@@ -41,7 +42,7 @@
                             {% if cards %}
                             {% for fotografia in cards %}
                             <li class="card">
-                                <a href="{% url 'imagem' %}">
+                                <a href="{% url 'imagem' fotografia.id %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/' %}{{ fotografia.foto }}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
